@@ -8,6 +8,9 @@ grunt.initConfig( {
 			jshintrc: ".jshintrc"
 		}
 	},
+	jscs: {
+		src: [ "*.js" ]
+	},
 	csslint: {
 		files: [ "public/stylesheets/**.css" ],
 		options: {
@@ -17,7 +20,8 @@ grunt.initConfig( {
 
 } );
 grunt.loadNpmTasks( "grunt-contrib-jshint" );
+grunt.loadNpmTasks( "grunt-jscs" );
 grunt.loadNpmTasks( "grunt-contrib-csslint" );
-grunt.registerTask( "default", [ "jshint", "csslint" ] );
+grunt.registerTask( "default", [ "jshint", "jscs", "csslint" ] );
 
 };
