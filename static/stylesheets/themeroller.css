@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: helvetica; }
+
+.topbar {
+  z-index: 5;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: #36C0CA;
+  height: 55px; }
+  .topbar img.logo {
+    height: 47px;
+    padding: 4px;
+    display: inline-block;
+    vertical-align: middle; }
+  .topbar h1 {
+    margin: 0;
+    padding: 0;
+    height: 55px;
+    line-height: 55px;
+    color: white;
+    font-family: helvetica, sans-serif;
+    display: inline-block;
+    vertical-align: middle; }
+
+/* Sidebar */
+.sidebar {
+  position: absolute;
+  bottom: 0;
+  top: 55px;
+  width: 30%;
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.4); }
+  .sidebar .sidepane {
+    position: absolute;
+    background: #383838;
+    height: 100%;
+    padding: 5px 2px;
+    box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.4); }
+    .sidebar .sidepane .icon.menu {
+      width: 24px;
+      height: 24px; }
+      .sidebar .sidepane .icon.menu use {
+        fill: white; }
+    .sidebar .sidepane ul {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 0; }
+      .sidebar .sidepane ul li {
+        text-align: center;
+        margin: 3px;
+        margin-right: 4px;
+        display: block;
+        list-style-type: none; }
+        .sidebar .sidepane ul li a {
+          display: block;
+          height: 24px;
+          width: 24px;
+          padding: 10px; }
+          .sidebar .sidepane ul li a:acive {
+            outline: none; }
+          .sidebar .sidepane ul li a:focus {
+            outline: none; }
+      .sidebar .sidepane ul li.ui-state-active {
+        background: #525252; }
+  .sidebar .sidebar-content {
+    margin-left: 70px;
+    padding-top: 20px; }
+    .sidebar .sidebar-content #menu-accordion h3 {
+      font-weight: normal;
+      font-size: 1.1em;
+      cursor: pointer; }
+    .sidebar .sidebar-content .variable label {
+      display: inline-block;
+      width: 100px;
+      text-align: right;
+      padding-right: 10px; }
+    .sidebar .sidebar-content .variable input {
+      border: 1px solid #999;
+      height: 24px; }
+
+/*# sourceMappingURL=themeroller.css.map */

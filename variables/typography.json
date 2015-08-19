@@ -1,0 +1,15 @@
+{
+	"icon" : "text",
+	"label": "Typography",
+	"sections" :{
+		"font" : {
+			"Font Family" :{
+				"type" : "text",
+				"var-name": ""
+
+			}
+		}
+	}
+
+
+}

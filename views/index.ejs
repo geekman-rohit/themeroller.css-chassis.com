@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Themeroller</title>
+	<link rel="stylesheet" href="stylesheets/themeroller.css">
+	<link rel="stylesheet" href="flexboxgrid/dist/flexboxgrid.min.css">
+	<script src="jquery/dist/jquery.min.js" charset="utf-8"></script>
+	<script src="jquery-ui/jquery-ui.min.js" charset="utf-8"></script>
+
+	<script>
+$(function() {
+	$( "#menu-tabs" ).tabs();
+	$( "#menu-accordion" ).accordion();
+});
+
+</script>
+</head>
+<body>
+<div class="topbar row">
+
+	<div class="col-md-6 brand">
+		<div class="box">
+		<img src="images/chassis.png" class="logo" alt="">
+		<h1> <%= title %></h1>
+		</div>
+	</div>
+	<div class="col-md-4">
+
+	</div>
+</div>
+<div class="row page">
+
+	<div class="col-md-4 sidebar" id="menu-tabs">
+
+
+			<div class="sidepane">
+
+				<ul>
+					<% for( var key in vars ) {
+						if( vars.hasOwnProperty( key )) {
+							tab = vars[ key ]
+							%>
+							<li><a href="#<%= key %>">
+								<svg viewBox="0 0 8 8" class="icon menu"><use xlink:href="open-iconic/sprite/open-iconic.svg#<%= tab.icon %>" syle="fill:white;"></use></svg>
+							</a></li>
+					<%
+						}
+					}
+					%>
+				</ul>
+			</div>
+			<div class="sidebar-content">
+				<% for( var key in vars ) {
+					if( vars.hasOwnProperty( key )) {
+						tab = vars[ key ]
+						sections = tab.sections
+						%>
+						<div id="<%= key %>">
+							<div id="menu-accordion">
+							<%
+							for( var sectionkey in sections ) {
+								if( sections.hasOwnProperty( sectionkey )) {
+									section = sections[ sectionkey ]
+									variables = section
+									%>
+									<h3> <%= sectionkey %> </h3>
+									<div>
+										<%
+										for( var varkey in variables ) {
+											if( variables.hasOwnProperty( varkey ) ) {
+												variable = variables[ varkey ]
+												fullkey = key + "-" + sectionkey + "-" + varkey
+												vartype = variable.type
+												%>
+												<div class="variable">
+													<label for="#<%= fullkey %>">
+														<%= varkey %>
+													</label>
+													<% if(vartype == "text")
+													{
+														%>
+														<input type="text" name="<%= fullkey %>" value="" id="<%= fullkey %>">
+														<%
+													}
+
+													 %>
+
+												</div>
+												<%
+											}
+										}
+										%>
+									</div>
+									<%
+								}
+							}
+							%>
+
+
+							</div>
+
+						</div>
+
+
+				<%
+					}
+				}
+				%>
+
+			</div>
+
+
+	</div>
+
+	<div class="col-md-8">
+
+	</div>
+</div>
+</body>
+</html>
